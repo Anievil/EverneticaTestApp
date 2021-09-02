@@ -1,0 +1,10 @@
+.cardBox{
+    width: fit-content;
+    padding: 15px;
+    background-color: whitesmoke !important;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
+}
