@@ -2,9 +2,19 @@
     width: fit-content;
     padding: 15px;
     background-color: whitesmoke !important;
+    position: relative !important;
+    cursor: pointer;
 }
 
-.link{
-    text-decoration: none;
-    color: black;
+.checkBox{
+    position: absolute !important;
+    margin: auto;
+    right: 15px;
+    bottom: 10px;
+}
+.closeButton{
+    position: absolute !important;
+    margin: auto;
+    right: 15px;
+    top: 10px;
 }

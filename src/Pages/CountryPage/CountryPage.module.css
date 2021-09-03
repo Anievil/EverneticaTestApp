@@ -1,0 +1,24 @@
+.countryPage{
+    display: flex;
+    justify-content: space-around;
+    width: 40vw;
+    margin: 30px auto;
+}
+
+.flag{
+    width: 200px;
+    height: 100px;
+}
+
+.countryInfo{
+    text-align: center;
+}
+
+.fixCheck{
+    background-color: whitesmoke;
+    border-radius: 20px;
+    padding: 10px 15px;
+    margin: 0;
+    border: 1px gray solid;
+    height: fit-content;
+}

@@ -4,18 +4,33 @@ import styles from './CardList.module.css'
 import { useSelector } from 'react-redux'
 
 function CardList() {
-    const { allCountries, fixedCountries } = useSelector(store => store)
+    const { anchoredStore: { data }, countriesStore: { allCountries } } = useSelector(store => store)
 
-    console.log(allCountries)
-    console.log(fixedCountries)
     return (
         <div className={styles.countriesCont}>
-            {allCountries
-                ? allCountries.map(({ alpha3Code, name }) => <CountryCard key={alpha3Code} name={name} code={alpha3Code} />)
+            {data.length !== 0 || allCountries
+                ? <>
+                    {data?.map(({ alpha3Code, name, flag }) => <CountryCard
+                        className={' ',styles.anchored}
+                        key={alpha3Code}
+                        name={name}
+                        alpha3Code={alpha3Code}
+                        flag={flag}
+                        isAnchor={true} />
+                    )}
+                    {allCountries?.map(({ alpha3Code, name, flag }) => <CountryCard
+                        key={alpha3Code}
+                        name={name}
+                        alpha3Code={alpha3Code}
+                        flag={flag}
+                        isAnchor={false}
+                        allCountries={allCountries} />
+                    )}
+                </>
                 : <h2>Enter country name</h2>
             }
         </div>
     )
 }
 
-export default CardList
+export default CardList 

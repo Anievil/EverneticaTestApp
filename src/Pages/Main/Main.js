@@ -1,7 +1,6 @@
 import React from 'react'
 import SearchForm from '../../Components/SearchForm/SearchForm'
 import CardList from '../../Components/CardList/CardList'
-import styles from './Main.module.css'
 import { getInfo } from '../../Api/index'
 import { useDispatch } from 'react-redux'
 import { saveAllCountries } from '../../Actions/ActionCreator'

@@ -5,3 +5,4 @@ export const getInfo = async (countryName) => {
         .catch(() => 'err')
     return data
 }
+

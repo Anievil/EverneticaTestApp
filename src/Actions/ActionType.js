@@ -1,5 +1,7 @@
 const types = {
     SAVE_ALL_COUNTRIES: "SAVE_ALL_COUNTRIES",
+    ANCHOR_NEW_COUNTRY: "ANCHOR_NEW_COUNTRY",
+    DELETE_COUNTRY: "DELETE_COUNTRY"
 }
 
 export default types
