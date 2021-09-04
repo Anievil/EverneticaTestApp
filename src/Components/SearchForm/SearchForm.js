@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './SearchForm.module.css'
 import { TextField, Button } from '@material-ui/core';
+import { Form } from '../../Styles/Style'
 
 const SearchForm = ({ searchCountry }) => {
     const drop = (e) => {
@@ -11,11 +11,13 @@ const SearchForm = ({ searchCountry }) => {
     }
 
     return (
-        <form className={styles.searchForm} onSubmit={drop} onChange={searchCountry} autoComplete='off'>
-            <TextField placeholder='Search here...' name='search' type='text' autoFocus  />
+        <Form onSubmit={drop} onChange={searchCountry} autoComplete='off'>
+            <TextField placeholder='Search here...' name='search' type='text' autoFocus />
             <Button type='submit'>Drop</Button>
-        </form>
+        </Form>
     )
 }
+
+
 
 export default SearchForm

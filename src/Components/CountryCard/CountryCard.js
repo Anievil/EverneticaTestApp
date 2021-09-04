@@ -10,7 +10,7 @@ const CountryCard = ({ alpha3Code, name, isAnchor }) => {
     const [isHover, setIsHover] = useState(false)
     const dispatch = useDispatch()
     const history = useHistory()
-    
+
     const redirect = () => {
         history.push(`/country/${name}`)
     }
@@ -23,10 +23,10 @@ const CountryCard = ({ alpha3Code, name, isAnchor }) => {
     const handleCheckbox = (e) => {
         e.stopPropagation();
         if (!isAnchor) {
-            dispatch(anchorCountry({name, alpha3Code}))
+            dispatch(anchorCountry({ name, alpha3Code }))
         }
         else {
-            dispatch(deleteFromAnchorCountry({name, alpha3Code}))
+            dispatch(deleteFromAnchorCountry({ name, alpha3Code }))
         }
     }
 
@@ -44,7 +44,7 @@ const CountryCard = ({ alpha3Code, name, isAnchor }) => {
             <p>{alpha3Code}</p>
             {isHover
                 ? <>
-                    <div onClick={handleClose} className={styles.closeButton} > close </div>
+                    <div onClick={handleClose} className={styles.closeButton} > Delete </div>
                     <Checkbox onClick={handleCheckbox} className={styles.checkBox} checked={isAnchor} />
                 </>
                 : ''}

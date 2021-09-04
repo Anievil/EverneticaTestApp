@@ -1,8 +1,0 @@
-.searchForm{
-    margin: 30px auto;
-    width: fit-content;
-}
-
-.searchForm  * + .searchForm  *{
-    margin-left: 10px;
-}

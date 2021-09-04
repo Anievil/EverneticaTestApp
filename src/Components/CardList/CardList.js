@@ -11,7 +11,6 @@ function CardList() {
             {filteredCountries || data.length !== 0
                 ? <>
                     {data?.map(({ alpha3Code, name }) => <CountryCard
-                        className={' ', styles.anchored}
                         key={alpha3Code}
                         name={name}
                         alpha3Code={alpha3Code}
