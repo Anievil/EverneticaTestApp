@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styles from './CountryCard.module.css'
 import { Card } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
 import { anchorCountry, deleteFromAllCountry, deleteFromAnchorCountry } from '../../Actions/ActionCreator'
 import { Checkbox } from '@material-ui/core';
+import { CloseButton } from '../../Styles/Style'
 
 const CountryCard = ({ alpha3Code, name, isAnchor }) => {
     const [isHover, setIsHover] = useState(false)
@@ -39,13 +39,18 @@ const CountryCard = ({ alpha3Code, name, isAnchor }) => {
     }
 
     return (
-        <Card onClick={redirect} onMouseEnter={handleOn} onMouseLeave={handleOut} className={styles.cardBox}>
+        <Card onClick={redirect} onMouseEnter={handleOn} onMouseLeave={handleOut}>
             <h2>{name}</h2>
             <p>{alpha3Code}</p>
             {isHover
                 ? <>
-                    <div onClick={handleClose} className={styles.closeButton} > Delete </div>
-                    <Checkbox onClick={handleCheckbox} className={styles.checkBox} checked={isAnchor} />
+                    <CloseButton onClick={handleClose}> Delete </CloseButton>
+                    <Checkbox style={{
+                        position: 'absolute',
+                        margin: 'auto',
+                        right: '15px',
+                        bottom: '10px',
+                    }} onClick={handleCheckbox} checked={isAnchor} />
                 </>
                 : ''}
         </Card>

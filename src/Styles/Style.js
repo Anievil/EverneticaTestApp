@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const fit_content = 'fit-content'
+const fitContent = 'fit-content', spaceAround = 'space-around' , flex = 'flex'
 
 // Country Page
 
@@ -14,8 +14,8 @@ export const Flag = styled.img`
     height: 100px;
 `
 export const CountryName = styled.div`
-    display: flex;
-    justify-content: space-around;
+    display: ${flex};
+    justify-content: ${spaceAround};
 `
 export const Icon = styled.h3`
     background-color: whitesmoke;
@@ -23,7 +23,7 @@ export const Icon = styled.h3`
     padding: 10px 15px;
     margin: 0;
     border: 1px gray solid;
-    height: ${fit_content};
+    height: ${fitContent};
     margin: auto 0
 `
 
@@ -31,5 +31,30 @@ export const Icon = styled.h3`
 
 export const Form = styled.form`
     margin: 20px auto;
-    width: ${fit_content};
+    width: ${fitContent};
+`
+
+//  CardList
+
+export const CountryCont = styled.div`
+    display: ${flex};
+    justify-content: ${spaceAround};
+    flex-wrap: wrap;
+    width: 90vw;
+    margin: 0 auto;
+    > * {
+        margin-bottom: 30px;
+        width: fit-content;
+        padding: 15px;
+        background-color: whitesmoke !important;
+        position: relative !important;
+        cursor: pointer;
+    }
+`
+
+export const CloseButton = styled.div`
+    position: absolute;
+    margin: auto;
+    right: 15px;
+    top: 10px;
 `

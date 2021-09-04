@@ -1,13 +1,13 @@
 import React from 'react'
 import CountryCard from '../CountryCard/CountryCard'
-import styles from './CardList.module.css'
 import { useSelector } from 'react-redux'
+import { CountryCont } from '../../Styles/Style'
 
 function CardList() {
     const { anchoredStore: { data }, countriesStore: { filteredCountries } } = useSelector(store => store)
 
     return (
-        <div className={styles.countriesCont}>
+        <CountryCont>
             {filteredCountries || data.length !== 0
                 ? <>
                     {data?.map(({ alpha3Code, name }) => <CountryCard
@@ -25,7 +25,7 @@ function CardList() {
                 </>
                 : <h2>Enter country name</h2>
             }
-        </div>
+        </CountryCont>
     )
 }
 
