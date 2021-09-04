@@ -9,7 +9,6 @@ const CountryPage = () => {
     const x = useParams()
 
     const isAnchored = useSelector(({ anchoredStore: {data} }) => data.find((item) => item.name === x.name ? true : false))
-    console.log(x.name)
 
     useEffect(async () => {
         setCountry(await getInfo(x.name))
@@ -18,14 +17,14 @@ const CountryPage = () => {
     return (
         <div className={styles.countryPage}>
             { country ?
-                <>
                     <div className={styles.countryInfo}>
                         <img src={country[0].flag} alt='flag' className={styles.flag} />
-                        <h2>{country[0].name}</h2>
+                        <div className={styles.nameBlock}>
+                            <h2>{country[0].name}</h2>
+                            { isAnchored ? <h3 className={styles.fixCheck}>fixed</h3> : ''}
+                        </div>
                         <p>{country[0].alpha3Code}</p>
                     </div>
-                    { isAnchored ? <h3 className={styles.fixCheck}>fixed</h3> : ''}
-                </>
                 : ''
             }
         </div>

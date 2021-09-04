@@ -1,17 +1,21 @@
 .countryPage{
+    width: 20vw;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.nameBlock{
     display: flex;
     justify-content: space-around;
-    width: 40vw;
-    margin: 30px auto;
+}
+
+.nameBlock > h3{
+    margin: auto 0
 }
 
 .flag{
     width: 200px;
     height: 100px;
-}
-
-.countryInfo{
-    text-align: center;
 }
 
 .fixCheck{
@@ -22,3 +26,4 @@
     border: 1px gray solid;
     height: fit-content;
 }
+

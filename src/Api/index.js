@@ -6,3 +6,7 @@ export const getInfo = async (countryName) => {
     return data
 }
 
+export const getAllInfo = async () => {
+    const { data } = await axios.get(`https://restcountries.eu/rest/v2/all`)
+    return data
+}

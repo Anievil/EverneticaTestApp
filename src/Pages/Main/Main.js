@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SearchForm from '../../Components/SearchForm/SearchForm'
 import CardList from '../../Components/CardList/CardList'
-import { getInfo } from '../../Api/index'
+import { getAllInfo } from '../../Api/index'
 import { useDispatch } from 'react-redux'
-import { saveAllCountries } from '../../Actions/ActionCreator'
+import { saveAllCountries, filterCountries } from '../../Actions/ActionCreator'
 
 const Main = () => {
     const dispatch = useDispatch()
 
     const searchCountry = async (e) => {
         e.preventDefault()
-        console.log(e.target.value)
-        const data = await getInfo(e.target.value)
-        dispatch(saveAllCountries(data !== 'err' ? data : null))
+        let words = e.target.value.split(' ');
+        for (let i = 0; i < words.length; i++) {
+            words[i] = words[i].slice(0, 1).toUpperCase() + words[i].slice(1);
+        }
+        e.target.value = words.join(' ');
+
+        dispatch(filterCountries(e.target.value))
     }
+
+    useEffect(async () => {
+        const allCountries = await getAllInfo()
+        dispatch(saveAllCountries(allCountries))
+    }, [])
 
     return (
         <div>
